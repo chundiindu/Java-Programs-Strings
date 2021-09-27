@@ -1,0 +1,49 @@
+Write a program to take string as input and check if it contains only character or not.
+Numeric and special symbols are not allowed. After that, reverse that string without using any built in function. 
+If entered and reverse string both are same then give message as ‘you inputted a strong string” Otherwise print”weak string”
+
+
+
+import java.io.*;
+import java.lang.*;
+import java.util.Scanner;
+
+public class GFG {
+    public static void fun(String str1)
+    {
+    
+     char[] chars = str1.toCharArray();
+
+    for (char x : chars) {
+        if(!Character.isLetter(x)) {
+            System.out.print("enter Correct String");
+            return;
+        }
+		}
+    
+		 char[] c = str1.toCharArray();
+	     String rev="";
+	     for(int i=c.length-1;i>=0;i--)
+	     {
+	         rev=rev+c[i];
+	     }
+	      
+
+        if(str1.equals(rev))
+        {
+            System.out.println("You inputted a stong String"); 
+        }
+        else{
+            System.out.println("You inputted a Weak String"); 
+        }
+        
+    }
+        
+	public static void main (String[] args) {
+	    Scanner in = new Scanner(System.in);
+	    System.out.println("Enter String");
+	    String str1 =in.nextLine();
+	    fun(str1);
+	  
+	}
+}
