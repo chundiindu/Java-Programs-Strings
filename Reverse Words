@@ -1,0 +1,40 @@
+public class MyClass {
+    public static String reverseEachWord(String str)
+    {
+       String ans ="";
+        int currentWordStart = 0;
+        int i=0;
+        for(;i<str.length();i++)
+        {
+            if(str.charAt(i)==' ')
+            {
+                int currentWordEnd = i-1;
+                String reverseWord = "";
+                
+                for(int j=currentWordEnd;j>=currentWordStart;j--)
+                {
+                    reverseWord= reverseWord+str.charAt(j);
+                    
+                }
+                ans = ans + reverseWord+" ";
+                currentWordStart=i+1;
+            }
+        }
+            int currentWordEnd = i-1;
+                String reverseWord = "";
+                
+                for(int j=currentWordEnd;j>=currentWordStart;j--)
+                {
+                    reverseWord= reverseWord+str.charAt(j);
+                    
+                }
+             ans = ans + reverseWord;
+                return ans;
+    }
+      
+    public static void main(String args[]) {
+        String str = "abc def ghi";
+        System.out.println(reverseEachWord(str));
+      
+    }
+}
