@@ -1,0 +1,36 @@
+class Solution {
+    public boolean arrayStringsAreEqual(String[] word1, String[] word2) {
+       String s1="";
+        String s2="";
+        for(String s:word1)
+        {
+            s1=s1+s;
+        }
+        for(String t:word2)
+        {
+            s2=s2+t;
+        }
+        
+            return s1.equals(s2);
+        
+    }
+}
+
+class Solution {
+    public boolean arrayStringsAreEqual(String[] word1, String[] word2) {
+        StringBuilder first = new StringBuilder();
+        StringBuilder second = new StringBuilder();
+        
+        for(String str1: word1)
+        {
+            first.append(str1);
+        }
+        for(String str2: word2)
+        {
+            second.append(str2);
+        }
+        return (first.toString()).equals(second.toString());
+        
+        
+    }
+}
