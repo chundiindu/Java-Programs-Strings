@@ -13,3 +13,21 @@ class Solution
         return false;
     }
 }
+class Solution
+{    
+    //Function is to check whether two strings are anagram of each other or not.
+    public static boolean isAnagram(String a,String b)
+   {
+       
+       char[] aCh = a.toCharArray(), bCh = b.toCharArray();
+       int aSum = 0, bSum = 0;
+       if (aCh.length != bCh.length) return false;
+
+       for (int i = 0; i < aCh.length; i++) {
+           aSum += aCh[i];
+           bSum += bCh[i];
+       }
+       return aSum==bSum;
+       
+   }
+}
