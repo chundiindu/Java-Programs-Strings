@@ -1,0 +1,29 @@
+Given two strings a and b. The task is to find if the string 'b' can be obtained by rotating another string 'a' by exactly 2 places.
+
+
+
+
+class Solution
+{
+    //Function to check if a string can be obtained by rotating
+    //another string by exactly 2 places.
+    public static boolean isRotated(String str1, String str2)
+    {
+        if(str1.length()!=str2.length())
+        {
+            return false;
+        }
+        if(str1.length()<2)
+        {
+            return false;
+        }
+        String clock="";
+        String anticlock="";
+        int len = str2.length();
+        anticlock=anticlock+str2.substring(len-2,len)+str2.substring(0,len-2);
+        clock=clock+str2.substring(2)+str2.substring(0,2);
+        return(str1.equals(anticlock)||str1.equals(clock));
+    }
+    
+}
+
