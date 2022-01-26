@@ -31,3 +31,57 @@ class Solution{
         return result;
     }
 }
+
+
+
+class Solution{
+    String longestCommonPrefix(String arr[], int n){
+        int minlen = findMinLength(arr,n);
+        String result="";
+        char current;
+       
+        for(int i=0;i<minlen;i++)
+        {
+            
+            current=arr[0].charAt(i);
+            for(int j=1;j<n;j++)
+            {
+                if(arr[j].charAt(i)!=current)
+                {
+                     if(result.length()==0)
+                    {
+           
+                      return "-1";
+                      }
+                    return result;
+                }
+    
+            }
+            result+=current;
+         
+        }
+        if(result.length()==0)
+        {
+           
+            return "-1";
+        }
+        
+        return result;
+        
+    }
+
+    static int findMinLength(String arr[], int n)
+    {
+        int min = arr[0].length();
+        for(int i=1;i<n;i++)
+        {
+            if(arr[i].length()<min)
+            {
+                min=arr[i].length();
+            }
+        }
+        return min;
+     
+}
+}
+
