@@ -1,0 +1,25 @@
+class Solution {
+   // Finds decimal value of a given roman numeral
+   public int romanToDecimal(String str) {
+       // code here
+       HashMap<Character,Integer> hm=new HashMap<>();
+       hm.put('I', 1);
+       hm.put('V', 5);
+       hm.put('X', 10);
+       hm.put('L', 50);
+       hm.put('C', 100);
+       hm.put('D', 500);
+       hm.put('M', 1000);
+       
+       int ans=hm.get(str.charAt(str.length()-1));
+       
+       for(int i=str.length()-2;i>=0;i--)
+       {
+           if(hm.get(str.charAt(i))<hm.get(str.charAt(i+1)))
+             ans=ans-hm.get(str.charAt(i));
+           else
+             ans=ans+hm.get(str.charAt(i));
+       }
+       return ans;
+   }
+}
