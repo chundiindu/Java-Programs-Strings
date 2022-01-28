@@ -1,0 +1,37 @@
+Implement Atoi 
+Your task  is to implement the function atoi. The function takes a string(str) as argument and converts it to an integer and returns it.
+
+Note: You are not allowed to use inbuilt function.
+
+Your task  is to implement the function atoi. The function takes a string(str) as argument and converts it to an integer and returns it.
+
+Note: You are not allowed to use inbuilt function.
+class Solution
+{
+    int atoi(String str) {
+	  int i=0;
+	  int flag=0;
+	  int ans =0;
+	  if(str.charAt(0)=='-')
+	  {
+	      i=1;
+	      flag=1;
+	  }
+	  for(;i<str.length();i++)
+	  {
+	      if(str.charAt(i)>='0'&&str.charAt(i)<='9')
+	      {
+	          ans=ans*10+(str.charAt(i)-'0');
+	      }
+	      else
+	      {
+	          return -1;
+	      }
+	  }
+	  if(flag==1)
+	  {
+	      ans=-1*ans;
+	  }
+	  return ans;
+    }
+}
